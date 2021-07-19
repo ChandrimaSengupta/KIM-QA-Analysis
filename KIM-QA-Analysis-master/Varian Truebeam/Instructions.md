@@ -3,8 +3,17 @@
 ## Requirement: MATLAB, MCR 2018b 64 bit. 
 MCR has been used for the purpose when the computers at different sites do not have MATLAB installed. In that case, install MCR on a computer that has MATLAB and create a standalone executable by writing 'mcc -e ***.mlapp' in the command prompt. This will create a standalone executable file. This executable file then can be used in any computer that has MCR istalled. 
 
-## Instructions to run: 
-1. Download static localisation codes (App_Static_loc.mlapp and Staticloc.m), dynamic localisation codes (App_Dynamic_loc.mlapp and Dynamicloc.m) and treatment interruption codes (App_treat_int.mlapp and TreatmentInt.m).
+## Instructions to run static tests: 
+1. Download static localisation codes (App_Static_loc.mlapp and Staticloc.m).
+2. If MATLAB has been installed, Open the MATLAB app (.mlapp file) and run the code. The code looks for:
+   * a) 'Parent Path' - The folder that contains KIM log files. Usually the Image folder contains 'Markerlocation_GA.txt' file/files which is/are needed for this analyis.
+   * b) 'Coordinate file' - The patient coordinate file. The code requires this file only to have numbers. 
+   * c) 'Static shifts' - Apply couch shifts. 
+   * d) Click on 'Compute Accuracy'. 
+   * e) The code generate a file named 'Metrics.txt' with the information mean, standard deviation and percentiles in LR, SI and AP directions for all the data points and a figure with the KIM trace. 
+
+## Instructions to run dynamic localisation test and treatment interruption test: 
+1. Download dynamic localisation codes (App_Dynamic_loc.mlapp and Dynamicloc.m) and treatment interruption codes (App_treat_int.mlapp and TreatmentInt.m).
 2. If MATLAB has been installed, Open the MATLAB app (.mlapp file) and run the code. The code looks for:
    * a) 'Select KIM Traj folder' - The folder that contains KIM log files. Usually the 'KIM-kV' folder contains 'Markerlocation_GA.txt' file/files which is/are needed for this analyis.
    * b) 'Select Robot Traj file' - The robot trace file.
